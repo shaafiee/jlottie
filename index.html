@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>jlottie demo</title>
-        <script src="/dist/jlottie.min.js" type="text/javascript"></script>
-        <script src="jlottie.min.js" type="text/javascript"></script>
+        <title>jlottie Player</title>
+        <script src="/jlottie/jlottie.min.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="./style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Demo page for the jlottie player" />
+        <meta name="description" content="High performance, lightweight Lottie player" />
     </head>
 
     <body>
-        <div class="container lf-padding mx-auto py-16 md:py-18">
+        <div class="container lf-padding mx-auto py-8 md:py-18">
             <div class="w-full mx-auto text-center">
                 <a href="https://github.com/LottieFiles/jlottie" target="_blank" rel="noopener">
                     <button aria-label="github-link" class="bg-black rounded-lg px-3 py-2 mx-auto mb-4">
@@ -25,15 +24,18 @@
                     </button>
                 </a>
 
-                <h1 class="font-lf-bold text-6xl text-center">jlottie Player</h1>
-                <h2 class="font-normal font-lf-regular md:text-2xl text-center py-4 pb-10 leading-normal text-lf-grey">
+                <h1 class="font-lf-bold text-4xl lg:text-6xl text-center">jlottie Player</h1>
+                <h2 class="font-normal font-lf-regular text-2xl text-center py-4 pb-6 md:pb-10 leading-normal text-lf-grey">
                     High performance, lightweight Lottie player
                 </h2>
                 <div>
                     <h2
                         class="
                             font-normal font-lf-regular
+                            text-base
                             md:text-xl
+                            text-justify
+                            lg:text-left
                             text-left
                             w-full
                             lg:w-2/3
@@ -62,16 +64,17 @@
                             At only 9kb when gzipped, jlottie is perfect as a lightweight addition to any webapp where
                             not all of the lottie featues are necessary - common use cases include animated icons and
                             micro animations. A list of all of the playback features is available
-                            <a href="docs/features.html">here</a>.
+                            <a href="features.html">here</a>.
                         </p>
                     </h2>
 
-                    <h2 class="font-bold font-lf-regular md:text-2xl text-center py-4 pb-2 leading-normal text-lf-grey">
+                    <h2 class="font-bold font-lf-regular text-xl md:text-2xl text-center py-4 pb-2 leading-normal text-grey-darkest">
                         Supported features
                     </h2>
-                    <h2
+                    <div
                         class="
                             font-normal font-lf-regular
+                            text-base
                             md:text-xl
                             text-left
                             w-full
@@ -84,21 +87,22 @@
                         "
                     >
 
-                    <li>Shapes (except, ellipse, polystar, repeater, trim paths)</li>
-                    <li>Fills (except radial gradient)</li>
+                    <li>Shapes (except ellipse, polystar, repeater, trim paths)</li>
+                    <li>Fills (except radial gradient)</li
                     <li>Strokes (without opacity and dashes)</li>
                     <li>Transforms</li>
                     <li>Interpolation (except roving across time)</li>
                     <li>Masks (limited to path, opacity and subtract)</li>
                     <li>Layer effects (limited to only fills)</li>
-                    </h2>
+                    </div>
 
-                    <h2 class="font-bold font-lf-regular md:text-2xl text-center py-4 pb-2 leading-normal text-lf-grey">
+                    <h2 class="font-bold font-lf-regular text-xl md:text-2xl text-center py-4 pb-2 leading-normal text-grey-darkest">
                         Features not supported
                     </h2>
                     <h2
                         class="
                             font-normal font-lf-regular
+                            text-base
                             md:text-xl
                             text-left
                             w-full
@@ -122,13 +126,15 @@
 
                     </h2>
 
-                    <h2 class="font-bold font-lf-regular md:text-2xl text-center py-4 pb-2 leading-normal text-lf-grey">
+                    <h2 class="font-bold font-lf-regular text-xl md:text-2xl text-center py-4 pb-2 leading-normal text-grey-darkest">
                         Play a Lottie with jlottie:
                     </h2>
                     <h2
                         class="
                             font-normal font-lf-regular
                             md:text-xl
+                            text-base
+                            text-justify
                             text-left
                             w-full
                             lg:w-2/3
@@ -140,12 +146,14 @@
                         "
                     >
                         You can use the input box below to enter URLs pointing to Lottie JSON files. The animation will
-                        start playing as soon as the input box changes to a valid JSON file URL.
+                        start playing as soon as the "Load animation" button is clicked.
                     </h2>
                     <h2
                         class="
                             font-normal font-lf-regular
                             md:text-xl
+                            text-base
+                            text-justify
                             text-left
                             w-full
                             lg:w-2/3
@@ -168,7 +176,7 @@
             <div class="text-center w-full lg:w-2/3 mx-auto">
                 <div class="flex flex-col text-left">
                     <label class="font-lf-bold text-grey-darkest py-3">Lottie JSON Url: </label>
-                    <div class="flex">
+                    <div class="md:flex">
                         <input
                             id="lottieSrc"
                             placeholder="Load animation"
@@ -189,8 +197,9 @@
                                 pl-10
                                 mx-auto
                                 w-full
+                                mb-3
+                                md:mb-0
                             "
-                            value="https://assets8.lottiefiles.com/packages/lf20_RKwt3u.json"
                         />
                         <button
                             id="loadanim"
@@ -201,12 +210,14 @@
                                 trans
                                 hover:bg-lf-teal-dark-3
                                 hover:shadow-lg-teal
-                                py-4
-                                px-3
+                                py-2
+                                px-2
                                 font-lf-semi-bold
-                                w-48
-                                ml-2
+                                md:w-48
+                                md:ml-2
                                 shadow-md
+                                w-full
+
                             "
                         >
                             Load animation
@@ -354,13 +365,68 @@
             </div>
         </div> -->
         <script>
-            function loadLottie() {
-                jlottie.loadAnimation({
+            var sources = [];
+            sources.push('https://assets8.lottiefiles.com/private_files/lf30_ijlzmjq6.json');
+            sources.push('https://assets7.lottiefiles.com/packages/lf20_pyawb2b1.json');
+            sources.push('https://assets5.lottiefiles.com/private_files/lf30_jrfgebuy.json');
+            sources.push('https://assets10.lottiefiles.com/packages/lf20_fwykef3x.json');
+            sources.push('https://assets2.lottiefiles.com/packages/lf20_ogsbbjhs.json');
+            sources.push('https://assets8.lottiefiles.com/packages/lf20_qaemdbel.json');
+            sources.push('https://assets6.lottiefiles.com/packages/lf20_lptou8fo.json');
+            sources.push('https://assets10.lottiefiles.com/packages/lf20_yoatyllj.json');
+            sources.push('https://assets3.lottiefiles.com/packages/lf20_9sftqjek.json');
+            sources.push('https://assets10.lottiefiles.com/packages/lf20_hewaysm0.json');
+            sources.push('https://assets7.lottiefiles.com/packages/lf20_90ZmDV.json');
+            sources.push('https://assets9.lottiefiles.com/packages/lf20_GsFUFN.json');
+            sources.push('https://assets6.lottiefiles.com/packages/lf20_6xfdtlzb.json');
+            sources.push('https://assets10.lottiefiles.com/packages/lf20_zeut0ijf.json');
+            sources.push('https://assets10.lottiefiles.com/packages/lf20_qbvfmu8h.json');
+
+            sources.push('https://assets5.lottiefiles.com/datafiles/FdtKCvUPkcgdZEvWnsUbSO4rP3pWUWgZ5rKnG0rF/chinese.json');
+            sources.push('https://assets5.lottiefiles.com/temp/lf20_W14Z1y.json');
+            sources.push('https://assets9.lottiefiles.com/packages/lf20_IwfCpp.json');
+            sources.push('https://assets9.lottiefiles.com/packages/lf20_tWzLYe.json');
+            sources.push('https://assets9.lottiefiles.com/packages/lf20_MpQq5N.json');
+
+            sources.push('https://assets8.lottiefiles.com/packages/lf20_p5gon8vd.json');
+            sources.push('https://assets1.lottiefiles.com/packages/lf20_hIjFaT.json');
+            sources.push('https://assets1.lottiefiles.com/private_files/lf30_7BT8qy.json');
+            sources.push('https://assets8.lottiefiles.com/private_files/lf30_T5tVEx.json');
+            sources.push('https://assets5.lottiefiles.com/private_files/lf30_AGoC3n.json');
+            sources.push('https://assets4.lottiefiles.com/packages/lf20_sE2Em1.json');
+            sources.push('https://assets10.lottiefiles.com/private_files/lf30_nruc9E.json');
+            sources.push('https://assets10.lottiefiles.com/packages/lf20_gc88Qf.json');
+            sources.push('https://assets3.lottiefiles.com/packages/lf20_QegQCG.json');
+            sources.push('https://assets6.lottiefiles.com/packages/lf20_ctKmtF.json');
+            sources.push('https://assets6.lottiefiles.com/packages/lf20_hbqhhR.json');
+            sources.push('https://assets7.lottiefiles.com/packages/lf20_Lybh7B/data.json');
+            sources.push('https://assets4.lottiefiles.com/packages/lf20_gs7Ofl.json');
+            sources.push('https://assets6.lottiefiles.com/temp/lf20_vS6iGX.json');
+            sources.push('https://assets1.lottiefiles.com/private_files/lf30_kzp6harb.json');
+
+            sources.push('https://assets1.lottiefiles.com/private_files/lf30_scwwemah.json');
+
+            // better than lottie-web
+            sources.push('https://assets5.lottiefiles.com/packages/lf20_yinL5S.json'); 
+            sources.push('https://assets6.lottiefiles.com/packages/lf20_evz3Cm.json');
+            sources.push('https://assets3.lottiefiles.com/private_files/lf30_t0igqye8.json');
+            
+            let janim;
+            function loadLottie(doLoad) {
+                let pathToLoad;
+                if (doLoad === undefined || doLoad != 1) {
+                    pathToLoad = sources[Math.floor(Math.random() * sources.length)];
+                } else {
+                    pathToLoad = document.getElementById('lottieSrc').value;
+                }
+                document.getElementById('jlottie-container').innerHTML = "";
+                janim = jlottie.loadAnimation({
                     container: document.getElementById('jlottie-container'),
                     loop: true,
                     autoplay: true,
-                    path: document.getElementById('lottieSrc').value,
+                    path: pathToLoad, //document.getElementById('lottieSrc').value,
                 });
+                document.getElementById('lottieSrc').value = pathToLoad;
             }
             // setTimeout(function () {
             //     jlottie.goToAndStop(2, '', 'jlottie-container');
@@ -371,9 +437,16 @@
 
             var btn = document.getElementById('loadanim');
             btn.addEventListener('click', (event) => {
-                jlottie.destroy('jlottie-container');
-                loadLottie();
+                janim.destroy();
+                loadLottie(1);
             });
+
+            document.getElementById('jlottie-container').addEventListener("onLoadError", function (e) {
+                    document.getElementById('jlottie-container').innerHTML = "Error:<br />" + e.detail.error;
+                },
+                false,
+            );
+
 
             // var list_items = document.getElementsByClassName('jlottie-list-item');
 
@@ -403,13 +476,16 @@
             function jcontrol(element, todo) {
                 switch (todo) {
                     case 1:
-                        jlottie.play(element);
+                        //jlottie.play(element);
+                        janim.play();
                         break;
                     case 2:
-                        jlottie.pause(element);
+                        //jlottie.pause(element);
+                        janim.pause();
                         break;
                     case 3:
-                        jlottie.goToAndStop(1, '', element);
+                        //jlottie.goToAndStop(1, '', element);
+                        janim.goToAndStop(1);
                         break;
                     default:
                 }
